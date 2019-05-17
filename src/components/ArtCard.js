@@ -10,51 +10,51 @@ import ArtCommentForm from './Comments';
 class ArtCard extends React.Component {
   handleImageClick = (e, image) => {
     this.props.artForDetail(image) && this.props.showDetail()
- }
+  }
 
- saveToFavorites = (e, image) => {
-   e.preventDefault();
-   fetch("http://localhost:3000/favorites", {
-     method: 'POST', body: JSON.stringify({
-       user_id: localStorage.getItem('user_id'),
-       photo_id: image.id
-     }),
-     headers: {
-       'Content-Type': 'application/json'
-     }
-   }).then(res => res.json())
-     .then(console.log)
- }
+  saveToFavorites = (e, image) => {
+    e.preventDefault();
+    fetch("https://stark-cove-47075.herokuapp.com/favorites", {
+      method: 'POST', body: JSON.stringify({
+        user_id: localStorage.getItem('user_id'),
+        photo_id: image.id
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(console.log)
+  }
 
- likeImage = (e, image) => {
-   fetch(`http://localhost:3000/photos/${image.id}`, {
-       method: 'PATCH', body: JSON.stringify({
-         likes: image.likes + 1
-       }),
-       headers: {
-         'Content-Type': 'application/json'
-       }
-     }).then(res => res.json())
-        .then((e)=> this.props.fetchArt(e) )
- }
+  likeImage = (e, image) => {
+    fetch(`https://stark-cove-47075.herokuapp.com/photos/${image.id}`, {
+      method: 'PATCH', body: JSON.stringify({
+        likes: image.likes + 1
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then((e) => this.props.fetchArt(e))
+  }
 
-  render(){
-   const sortedById = this.props.images.sort(function (a, b) {
-     return a.id - b.id
-   })
-   console.log(sortedById)
-    return(
+  render() {
+    const sortedById = this.props.images.sort(function (a, b) {
+      return a.id - b.id
+    })
+    console.log(sortedById)
+    return (
       sortedById.map(image =>
-        <Card 
+        <Card
           key={image.id}>
-          <Image 
-          key={image.id}
-          src={image.img}
-          onClick={(e) => this.handleImageClick(e, image)} />
+          <Image
+            key={image.id}
+            src={image.img}
+            onClick={(e) => this.handleImageClick(e, image)} />
           <Button onClick={(e) => this.likeImage(e, image)}>
             <Icon name='user' />
             Like: {image.likes}
-            </Button>
+          </Button>
           <Button
             basic color='green'
             onClick={(e) => this.saveToFavorites(e, image)}>
@@ -86,4 +86,4 @@ class ArtCard extends React.Component {
 const mapStateToProps = (state) => {
   return { user: state.user, selectedArt: state.selectedArt, displayDetails: state.showDetail }
 }
-export default connect( mapStateToProps, { artForDetail, showDetail, userFetchArt } )( ArtCard )
+export default connect(mapStateToProps, { artForDetail, showDetail, userFetchArt })(ArtCard)

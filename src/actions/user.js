@@ -2,7 +2,7 @@ export const currentUser = (data) => {
     return { type: 'CURRENT_USER', data }
 }
 export const clearCurrentUser = () => {
-    return { type: 'CLEAR_CURRENT_USER'}
+    return { type: 'CLEAR_CURRENT_USER' }
 }
 
 export const uploadUserFile = (data) => {
@@ -10,20 +10,20 @@ export const uploadUserFile = (data) => {
 }
 
 export const artForDetail = (data) => {
-    return { type: 'ART_FOR_DETAIL', data}
+    return { type: 'ART_FOR_DETAIL', data }
 }
 
 export const showDetail = () => {
-    return {type: 'SHOW_DETAIL'}
+    return { type: 'SHOW_DETAIL' }
 }
 
 export const leaveDetail = () => {
-    return {type: 'LEAVE_DETAIL'}
+    return { type: 'LEAVE_DETAIL' }
 }
 
 export const refresh = () => {
-    const photosAPI = "http://localhost:3000/photos"
-    const fetchData = (data) => { return { type: 'REFRESH', data}}
+    const photosAPI = "https://stark-cove-47075.herokuapp.com/photos"
+    const fetchData = (data) => { return { type: 'REFRESH', data } }
     return (
         fetch(photosAPI)
             .then(res => res.json())

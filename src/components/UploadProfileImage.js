@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { uploadUserFile } from '../actions/user';
 import { userFetchArt } from '../actions/art';
 
-const url = 'http://localhost:3000/photos';
+const url = 'https://stark-cove-47075.herokuapp.com/photos';
 
 class UploadProfileImage extends React.Component {
     state = {
@@ -14,7 +14,7 @@ class UploadProfileImage extends React.Component {
         user_id: null
     }
 
-   
+
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -34,13 +34,13 @@ class UploadProfileImage extends React.Component {
             .then(res => res.json())
             .then(json =>
                 this.props.uploadUserFile(json.img) &&
-                this.fetchArtistsPhotos(e) 
+                this.fetchArtistsPhotos(e)
             )
         this.props.uploaded(e)
     };
 
     fetchArtistsPhotos = () => {
-        const photosAPI = "http://localhost:3000/photos"
+        const photosAPI = "https://stark-cove-47075.herokuapp.com/photos"
         return (
             fetch(photosAPI)
                 .then(res => res.json())
@@ -52,7 +52,7 @@ class UploadProfileImage extends React.Component {
             image: e.target.files[0]
         })
     };
-   render() {
+    render() {
         return (
             <Container>
                 <Form onSubmit={(e) => this.handleSubmit(e)}>

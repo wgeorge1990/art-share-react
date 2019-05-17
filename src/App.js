@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Container, Button } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Redirect, Link, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Link, Switch } from 'react-router-dom';
 import './semantic/dist/semantic.min.css';
 
 import ImageUploads from './components/ImageUploads';
@@ -23,7 +23,7 @@ import SignUp from './components/routes/SignUpRoute';
 
 class App extends Component {
   fetchArtistsPhotos = (e) => {
-    const photosAPI = "http://localhost:3000/photos"
+    const photosAPI = "https://stark-cove-47075.herokuapp.com/photos"
     return (
       fetch(photosAPI)
         .then(res => res.json())
@@ -49,22 +49,22 @@ class App extends Component {
     return (
       <Router>
         <Container fluid style={{}}>
-          <HeaderImage /> 
-            {this.props.user  ? <Menu user={this.props.user} logOut={this.logOut} />
+          <HeaderImage />
+          {this.props.user ? <Menu user={this.props.user} logOut={this.logOut} />
             : null}
-              <Switch>
-              <Route exact path="/ArtistsArtBoard" render={() => <ArtistsArtBoard fetchArt={this.fetchArtistsPhotos} />} />
-              <Route exact path="/BrowseAllArt" render={() => <BrowseAllArt fetchArt={this.fetchArtistsPhotos}/>} />
-                <Route exact path="/SignUp" render={() => <CreateAccountForm setUser={this.setUser}/>} />
-                <Route exact path="/Login" render={() => <Login user={this.props.user} setUser={this.setUser} />} />
-                <Route exact path="/ImageUploads" component={ImageUploads} />
-                <Route exact path="/ArtistProfile" component={Profile} />
-                <Route exact path="/ArtDetail" render={()=> <ArtDetail />}/>
-                <Route exact path="/Favorites" render={()=> <Favorites />} />
-              <Route exact path="/" render={() => <Home fetchArt={this.fetchArtistsPhotos} />}/>
-              </Switch>
-            
-          </Container>
+          <Switch>
+            <Route exact path="/ArtistsArtBoard" render={() => <ArtistsArtBoard fetchArt={this.fetchArtistsPhotos} />} />
+            <Route exact path="/BrowseAllArt" render={() => <BrowseAllArt fetchArt={this.fetchArtistsPhotos} />} />
+            <Route exact path="/SignUp" render={() => <CreateAccountForm setUser={this.setUser} />} />
+            <Route exact path="/Login" render={() => <Login user={this.props.user} setUser={this.setUser} />} />
+            <Route exact path="/ImageUploads" component={ImageUploads} />
+            <Route exact path="/ArtistProfile" component={Profile} />
+            <Route exact path="/ArtDetail" render={() => <ArtDetail />} />
+            <Route exact path="/Favorites" render={() => <Favorites />} />
+            <Route exact path="/" render={() => <Home fetchArt={this.fetchArtistsPhotos} />} />
+          </Switch>
+
+        </Container>
       </Router>
     );
   }
@@ -74,4 +74,4 @@ const mapStateToProps = (state) => {
   return { art: state.art, user: state.user }
 }
 
-export default connect(mapStateToProps, { userFetchArt, currentUser, clearCurrentUser, leaveDetail})(App)
+export default connect(mapStateToProps, { userFetchArt, currentUser, clearCurrentUser, leaveDetail })(App)

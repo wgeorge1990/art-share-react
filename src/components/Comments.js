@@ -4,23 +4,23 @@ import { connect } from 'react-redux'
 import Post from './Post'
 
 class ArtCommentForm extends React.Component {
-    state ={
+    state = {
         comments: null,
         content: "",
         toggleComments: false
     }
-    
+
     componentDidMount = () => {
-        this.fetchPhotosComments() 
+        this.fetchPhotosComments()
     }
 
     fetchPhotosComments = (e) => {
-        fetch("http://localhost:3000/fetchcomments", {
+        fetch("https://stark-cove-47075.herokuapp.com/fetchcomments", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }, 
-            body: JSON.stringify({photo_id: this.props.imageId})
+            },
+            body: JSON.stringify({ photo_id: this.props.imageId })
         }).then(res => res.json())
             .then(data => this.setState({
                 comments: data
@@ -29,38 +29,38 @@ class ArtCommentForm extends React.Component {
 
     createComment = (e) => {
         e.preventDefault()
-        fetch("http://localhost:3000/comments", {
+        fetch("https://stark-cove-47075.herokuapp.com/comments", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 photo_id: this.props.imageId,
                 user_id: localStorage.getItem('user_id'),
                 content: this.state.content
-             })
+            })
         }).then(res => res.json())
             .then(data => this.fetchPhotosComments(data))
-            this.setState({
-                content: ""
-            })
-        }
+        this.setState({
+            content: ""
+        })
+    }
 
     setContent = (e) => {
         this.setState({
             content: e.target.value
         })
 
-    } 
+    }
 
     showComments = (e) => {
         this.setState({
             toggleComments: !this.state.toggleComments
         })
     }
-    
 
-    render(){
+
+    render() {
         return (
             <Comment.Group>
                 <Form reply id='commentForm' >
@@ -76,16 +76,16 @@ class ArtCommentForm extends React.Component {
                         primary
                         onClick={(e) => this.createComment(e)} />
                 </Form>
-                <Button fluid onClick={(e)=> this.showComments(e)}>
-                  Show  Comments
+                <Button fluid onClick={(e) => this.showComments(e)}>
+                    Show  Comments
                 </Button>
 
-            {this.state.toggleComments ? 
+                {this.state.toggleComments ?
 
-            this.state.comments !== null ? this.state.comments.map(comment => <Post comment={comment} key={comment.id} /> ) : null
-           
-           : null}
-               
+                    this.state.comments !== null ? this.state.comments.map(comment => <Post comment={comment} key={comment.id} />) : null
+
+                    : null}
+
             </Comment.Group>
         )
     }
@@ -94,6 +94,6 @@ class ArtCommentForm extends React.Component {
 const mapStateToProps = (state) => {
     return { state }
 }
-    
+
 
 export default connect(mapStateToProps)(ArtCommentForm)
