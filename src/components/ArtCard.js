@@ -14,7 +14,7 @@ class ArtCard extends React.Component {
 
   saveToFavorites = (e, image) => {
     e.preventDefault();
-    fetch("https://stark-cove-47075.herokuapp.com/favorites", {
+    fetch("https://calm-temple-41350.herokuapp.com/favorites", {
       method: 'POST', body: JSON.stringify({
         user_id: localStorage.getItem('user_id'),
         photo_id: image.id
@@ -27,7 +27,7 @@ class ArtCard extends React.Component {
   }
 
   likeImage = (e, image) => {
-    fetch(`https://stark-cove-47075.herokuapp.com/photos/${image.id}`, {
+    fetch(`https://calm-temple-41350.herokuapp.com/photos/${image.id}`, {
       method: 'PATCH', body: JSON.stringify({
         likes: image.likes + 1
       }),
