@@ -1,0 +1,42 @@
+{
+  "name": "share-art",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.23",
+    "react": "^16.8.2",
+    "react-datetime": "^2.16.3",
+    "react-dom": "^16.8.2",
+    "react-moment": "^0.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "redux": "^4.0.1",
+    "semantic-ui": "^2.4.2",
+    "semantic-ui-react": "^0.85.0",
+    "faker": "latest",
+    "lodash": "latest"
+  },
+  "scripts": {
+    "build-semantic": "cd src/semantic && gulp build-css build-assets",
+    "watch-semantic": "cd src/semantic && yarn run build-semantic && gulp watch",
+    "start": "yarn run build-semantic && react-scripts start",
+    "build": "yarn run build-semantic && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.5"
+  }
+}
