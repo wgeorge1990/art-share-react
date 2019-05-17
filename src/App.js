@@ -48,10 +48,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Container fluid style={{}}>
+        <Container >
           <HeaderImage />
-          {this.props.user ? <Menu user={this.props.user} logOut={this.logOut} />
-            : null}
+          {this.props.user ? <Menu user={this.props.user} logOut={this.logOut} /> : null}
           <Switch>
             <Route exact path="/ArtistsArtBoard" render={() => <ArtistsArtBoard fetchArt={this.fetchArtistsPhotos} />} />
             <Route exact path="/BrowseAllArt" render={() => <BrowseAllArt fetchArt={this.fetchArtistsPhotos} />} />

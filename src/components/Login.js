@@ -19,10 +19,6 @@ class Login extends React.Component {
     this.props.user ? null : window.location.reload()
   )
 
-  // checkFont = () => {
-  //   if (something === true)
-  // }
-
   login = (e) => {
     e.preventDefault();
     fetch("https://stark-cove-47075.herokuapp.com/login", {

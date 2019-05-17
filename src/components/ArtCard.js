@@ -5,7 +5,7 @@ import 'moment-timezone'
 import { connect } from 'react-redux'
 import { artForDetail, showDetail } from '../actions/user'
 import { userFetchArt } from '../actions/art'
-import ArtCommentForm from './Comments';
+import ArtCommentForm from './Comments'
 
 class ArtCard extends React.Component {
   handleImageClick = (e, image) => {
