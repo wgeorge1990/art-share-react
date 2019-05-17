@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { Link, Redirect } from 'react-router-dom';
+import artShareLogo from '../images/logo.png'
 
 class Login extends React.Component {
   state = {
@@ -57,7 +58,7 @@ class Login extends React.Component {
           <Grid.Column style={{ maxWidth: 450 }}>
 
             <Header as='h2' color='teal' textAlign='center'>
-              <Image src='/Logo.png' style={{ height: "300px", width: "300px" }} />
+              <Image src={artShareLogo} style={{ height: "300px", width: "300px" }} />
             </Header>
 
             <Form size='large' >

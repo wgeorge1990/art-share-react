@@ -1,10 +1,12 @@
 import React from 'react'
 import { Image, Container } from 'semantic-ui-react'
+import artShareTextLogo from '../images/artShare.png'
+
 
 const HeaderImage = (props) => {
-  return(
+  return (
     <Container>
-      <Image src='/ArtShare.png'/>
+      <Image src={artShareTextLogo} />
     </Container>
   )
 
