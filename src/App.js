@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Container >
+        <Container fluid>
           <HeaderImage />
           {this.props.user ? <Menu user={this.props.user} logOut={this.logOut} /> : null}
           <Switch>

@@ -43,9 +43,6 @@ class ArtCard extends React.Component {
 
   showDetails = (image) => (
     <Card.Content>
-      <Card.Header>
-        {image.title}
-      </Card.Header>
       <Card.Description>
         <p>
           {image.description}
@@ -69,45 +66,29 @@ class ArtCard extends React.Component {
     console.log(sortedById)
     return (
       sortedById.map(image =>
-        <Card
+        <Card 
+          color='orange'
           key={image.id}>
+          <Card.Header>
+            {image.title}
+          </Card.Header>
           <Image
             fluid
             key={image.id}
             src={image.img}
             onClick={(e) => this.handleImageClick(e, image)} />
             <ButtonGroup fluid width={3}>
-            {/* <Button compact onClick={(e) => this.likeImage(e, image)}>
-              <Icon name='user' />
-              Like: {image.likes}
-            </Button> */}
-            {/* <Button as='div' labelPosition='right' onClick={(e) => this.likeImage(e, image)}>
-            <Button color='red'>
-              <Icon name='heart' />
-              Like
-            </Button>
-            <Label as='a' basic color='red' pointing='left'>
-              {image.likes}
-            </Label>
-          </Button> */}
-          {/* <Button compact 
-              onClick={(e) => this.saveToFavorites(e, image)}>
-              Save
-            </Button>
-          <Button compact  onClick={(e) => { this.setState({ showDetail: !this.state.showDetail }) }}>
-              Show Details
-          </Button> */}
             <Button basic color='red' compact onClick={(e) => this.likeImage(e, image)}>
               <Icon name='heart' />
               {image.likes}
             </Button>
-              <Button.Or />
+              {/* <Button.Or /> */}
             <Button
               basic color='green'
               onClick={(e) => this.saveToFavorites(e, image)}>
               Save
             </Button>
-              <Button.Or />
+              {/* <Button.Or /> */}
             <Button
               basic
               color='blue'

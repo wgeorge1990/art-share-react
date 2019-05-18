@@ -19,11 +19,9 @@
 @minHeight: 0px;
 @padding: 0em;
 @width: 290px;
-@borderWidth: 1px;
-@borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
-@boxShadow:
-  @shadowBoxShadow,
-  @borderShadow
+@borderWidth: 0px;
+@borderShadow: none;
+@boxShadow: none;
 ;
 @border: none;
 @zIndex: '';

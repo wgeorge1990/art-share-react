@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "faker": "latest",
+    "lodash": "latest",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "react": "^16.8.2",
     "react-datetime": "^2.16.3",
     "react-dom": "^16.8.2",
+    "react-images": "^0.5.19",
     "react-moment": "^0.8.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.8",
     "redux": "^4.0.1",
     "semantic-ui": "^2.4.2",
-    "semantic-ui-react": "^0.85.0",
-    "faker": "latest",
-    "lodash": "latest"
+    "semantic-ui-react": "^0.85.0"
   },
   "scripts": {
     "build-semantic": "cd src/semantic && gulp build-css build-assets",
