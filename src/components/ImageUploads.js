@@ -49,7 +49,6 @@ class ImageUploads extends React.Component {
         this.props.uploadUserFile(json.img) &&
         this.fetchArtistsPhotos() && setTimeout(() => this.props.history.push('/'), 3000)
       )
-
   };
 
   fetchArtistsPhotos = () => {
@@ -71,6 +70,12 @@ class ImageUploads extends React.Component {
       [e.target.name]: e.target.value
     })
   };
+
+  sizeHandler = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value + "  inches"
+    })
+  }
 
   render() {
     return (
@@ -110,15 +115,15 @@ class ImageUploads extends React.Component {
               <Form.Input
                 label="Deminsion: Width"
                 type="text"
-                placeholder="width"
+                placeholder="width in inches"
                 name='width'
-                onChange={(e) => this.titleHandler(e)} />
+                onChange={(e) => this.sizeHandler(e)} />
               <Form.Input
                 label="Deminsion: Height"
                 type="text"
                 placeholder="height"
                 name='height'
-                onChange={(e) => this.titleHandler(e)} />
+                onChange={(e) => this.sizeHandler(e)} />
               <Form.Input
                 label="Sold: true or false"
                 type="text"

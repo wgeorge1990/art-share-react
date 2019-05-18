@@ -62,7 +62,6 @@ class App extends Component {
             <Route exact path="/Favorites" render={() => <Favorites />} />
             <Route exact path="/" render={() => <Home fetchArt={this.fetchArtistsPhotos} />} />
           </Switch>
-
         </Container>
       </Router>
     );

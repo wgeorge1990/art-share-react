@@ -64,7 +64,7 @@ class ArtCommentForm extends React.Component {
         return (
             <Comment.Group>
                 <Form reply id='commentForm' >
-                    <Form.TextArea
+                    <Form.Input
                         value={this.state.content}
                         name="content"
                         onChange={(e) => this.setContent(e)} />
