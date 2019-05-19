@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { userFetchArt } from '../actions/art';
 import ArtDetail from './ArtDetail';
 import { Redirect } from 'react-router-dom';
-
+import LightBox from './LightBox'
 
 
 class ArtistsArtBoard extends React.Component {
@@ -77,7 +77,8 @@ class ArtistsArtBoard extends React.Component {
                       filteredForBoard.filter(art => art.category === this.state.searchterm)}
                  fetchArt={this.props.fetchArt} />
                 </Card.Group>
-              </Container> }
+             </Container>}
+           <LightBox art={this.props.art}/>
          </Container>
        
         )
