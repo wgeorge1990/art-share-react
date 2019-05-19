@@ -105,9 +105,6 @@ class CreateAccountForm extends React.Component {
                 type="password"
                 onChange={(e) => this.handleFormInputs(e)} />
             </Form.Field>
-            <Form.Field>
-              <Checkbox label='I commit to bringing Positivity and constructiveness Towards My Peers.' />
-            </Form.Field>
             <Button type='submit'>Submit</Button>
           </Form>
         }

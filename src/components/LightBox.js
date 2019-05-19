@@ -3,10 +3,7 @@ import Lightbox from 'react-images';
 
 export default class Sample extends React.Component { 
     state = {
-
-        
     }
-
     render() {
         console.log('inside of lightbox:', this.props.art)
         const imageArray = this.props.art.map(art => art.img)
@@ -23,7 +20,7 @@ export default class Sample extends React.Component {
 
         return (
             <Lightbox
-                images={[ frame() ]}
+                images={ [frame()] }
                 isOpen={this.state.lightboxIsOpen}
                 onClickPrev={this.gotoPrevious}
                 onClickNext={this.gotoNextLightboxImage}
@@ -31,3 +28,4 @@ export default class Sample extends React.Component {
         );
     }
 }
+
