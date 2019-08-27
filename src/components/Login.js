@@ -21,7 +21,7 @@ class Login extends React.Component {
 
   login = (e) => {
     e.preventDefault();
-    fetch("https://calm-temple-41350.herokuapp.com/login", {
+    fetch("https://art-share-rails.herokuapp.com/login", {
       method: 'POST', body: JSON.stringify({
         username: this.state.username,
         password: this.state.password

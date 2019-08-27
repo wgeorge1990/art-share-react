@@ -22,7 +22,7 @@ export const leaveDetail = () => {
 }
 
 export const refresh = () => {
-    const photosAPI = "https://calm-temple-41350.herokuapp.com/photos"
+    const photosAPI = "https://art-share-rails.herokuapp.com/photos"
     const fetchData = (data) => { return { type: 'REFRESH', data } }
     return (
         fetch(photosAPI)

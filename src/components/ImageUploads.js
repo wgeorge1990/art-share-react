@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { uploadUserFile } from '../actions/user';
 import { userFetchArt } from '../actions/art';
 
-const url = 'https://calm-temple-41350.herokuapp.com/photos';
+const url = 'https://art-share-rails.herokuapp.com/photos';
 
 class ImageUploads extends React.Component {
   state = {
@@ -52,7 +52,7 @@ class ImageUploads extends React.Component {
   };
 
   fetchArtistsPhotos = () => {
-    const photosAPI = "https://calm-temple-41350.herokuapp.com/photos"
+    const photosAPI = "https://art-share-rails.herokuapp.com/photos"
     return (
       fetch(photosAPI)
         .then(res => res.json())

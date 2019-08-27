@@ -23,7 +23,7 @@ import SignUp from './components/routes/SignUpRoute';
 
 class App extends Component {
   fetchArtistsPhotos = (e) => {
-    const photosAPI = "https://calm-temple-41350.herokuapp.com/photos"
+    const photosAPI = "https://art-share-rails.herokuapp.com/photos"
     return (
       fetch(photosAPI)
         .then(res => res.json())

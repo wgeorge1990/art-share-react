@@ -17,7 +17,7 @@ class ArtCard extends React.Component {
 
   saveToFavorites = (e, image) => {
     e.preventDefault();
-    fetch("https://calm-temple-41350.herokuapp.com/favorites", {
+    fetch("https://art-share-rails.herokuapp.com/favorites", {
       method: 'POST', body: JSON.stringify({
         user_id: localStorage.getItem('user_id'),
         photo_id: image.id
@@ -30,7 +30,7 @@ class ArtCard extends React.Component {
   }
 
   likeImage = (e, image) => {
-    fetch(`https://calm-temple-41350.herokuapp.com/photos/${image.id}`, {
+    fetch(`https://art-share-rails.herokuapp.com/photos/${image.id}`, {
       method: 'PATCH', body: JSON.stringify({
         likes: image.likes + 1
       }),
@@ -66,7 +66,7 @@ class ArtCard extends React.Component {
     console.log(sortedById)
     return (
       sortedById.map(image =>
-        <Card 
+        <Card
           color='orange'
           key={image.id}>
           <Card.Header>
@@ -77,25 +77,25 @@ class ArtCard extends React.Component {
             key={image.id}
             src={image.img}
             onClick={(e) => this.handleImageClick(e, image)} />
-            <ButtonGroup fluid width={3}>
+          <ButtonGroup fluid width={3}>
             <Button basic color='red' compact onClick={(e) => this.likeImage(e, image)}>
               <Icon name='heart' />
               {image.likes}
             </Button>
-              {/* <Button.Or /> */}
+            {/* <Button.Or /> */}
             <Button
               basic color='green'
               onClick={(e) => this.saveToFavorites(e, image)}>
               Save
             </Button>
-              {/* <Button.Or /> */}
+            {/* <Button.Or /> */}
             <Button
               basic
               color='blue'
               onClick={(e) => { this.setState({ showDetail: !this.state.showDetail }) }}>
               Details
             </Button>
-            </ButtonGroup>
+          </ButtonGroup>
           {this.state.showDetail ? this.showDetails(image) : null}
         </Card>
       )

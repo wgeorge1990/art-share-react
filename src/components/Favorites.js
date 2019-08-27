@@ -18,7 +18,7 @@ class Favorites extends React.Component {
     }
 
     fetchUsersFavorites = () => {
-        fetch("https://calm-temple-41350.herokuapp.com/favorites", {
+        fetch("https://art-share-rails.herokuapp.com/favorites", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

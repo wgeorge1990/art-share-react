@@ -13,7 +13,7 @@ class Post extends React.Component {
     }
     fetchUsername = (e) => {
         console.log('fetchusername', e)
-        fetch("https://calm-temple-41350.herokuapp.com/retrieveUsername", {
+        fetch("https://art-share-rails.herokuapp.com/retrieveUsername", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

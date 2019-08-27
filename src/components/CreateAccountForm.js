@@ -27,7 +27,7 @@ class CreateAccountForm extends React.Component {
   signUp = (e) => {
     let newUser
     e.preventDefault();
-    fetch("https://calm-temple-41350.herokuapp.com/users", {
+    fetch("https://art-share-rails.herokuapp.com/users", {
       method: 'POST', body: JSON.stringify({
 
         firstname: this.state.firstname,
@@ -46,7 +46,7 @@ class CreateAccountForm extends React.Component {
   }
 
   login = (e, data) => {
-    fetch("https://calm-temple-41350.herokuapp.com/login", {
+    fetch("https://art-share-rails.herokuapp.com/login", {
       method: 'POST', body: JSON.stringify({
         username: this.state.username,
         password: this.state.password

@@ -15,7 +15,7 @@ class ArtCommentForm extends React.Component {
     }
 
     fetchPhotosComments = (e) => {
-        fetch("https://calm-temple-41350.herokuapp.com/fetchcomments", {
+        fetch("https://art-share-rails.herokuapp.com/fetchcomments", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ class ArtCommentForm extends React.Component {
 
     createComment = (e) => {
         e.preventDefault()
-        fetch("https://calm-temple-41350.herokuapp.com/comments", {
+        fetch("https://art-share-rails.herokuapp.com/comments", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
