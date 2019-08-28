@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { userFetchArt } from '../actions/art';
 import ArtDetail from './ArtDetail';
 import { Redirect } from 'react-router-dom';
-import LightBox from './LightBox'
 
 
 class ArtistsArtBoard extends React.Component {
@@ -49,7 +48,7 @@ class ArtistsArtBoard extends React.Component {
       { key: 4, text: 'photography', value: 'photo'},
     ]
        return(
-           <Container fluid>
+         <Container className="CardContainer" style={{ 'width': "1600px" }}>
              <Card centered>
                <Button.Group>
                  <Button onClick={(e) => this.maximizeView(e)} >
@@ -68,7 +67,7 @@ class ArtistsArtBoard extends React.Component {
                placeholder="Filter Art By Category" />
              </Card>
            {this.props.showDetail ? <ArtDetail fetchArt={this.props.fetchArt}/> :
-              <Container fluid >
+             <Container className="CardContainer" style={{ 'width': "1600px" }}>
                 <Card.Group itemsPerRow={this.state.rowCount}>
                  <ArtCard 
                  images={
@@ -78,7 +77,6 @@ class ArtistsArtBoard extends React.Component {
                  fetchArt={this.props.fetchArt} />
                 </Card.Group>
              </Container>}
-           <LightBox art={this.props.art}/>
          </Container>
        
         )

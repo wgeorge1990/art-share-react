@@ -46,7 +46,7 @@ class BrowseAllArt extends React.Component {
         ]
         console.log()
         return (
-            <Container fluid>
+            <Container style={{ 'width': "1600px" }}>
                 <Card centered>
                     <Dropdown 
                     clearable 
@@ -65,7 +65,7 @@ class BrowseAllArt extends React.Component {
                     </Button.Group>
                 </Card>
                 {this.props.showDetail ? <ArtDetail fetchArt={this.props.fetchArt}/> :
-                <Container fluid >
+                    <Container style={{ 'width': "1600px" }}>
                     <Card.Group itemsPerRow={this.state.rowCount}>
                         <ArtCard 
                         images={ 

@@ -14,8 +14,6 @@ class UploadProfileImage extends React.Component {
         user_id: null
     }
 
-
-
     handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();

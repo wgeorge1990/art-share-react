@@ -10,8 +10,8 @@ class Profile extends React.Component {
         gridSize: false, 
         toggle: false,
         initialLoad: false
-
     }
+    
 
     uploadedProfileImage = () => {
         this.setState({
@@ -34,21 +34,18 @@ class Profile extends React.Component {
         return (
             this.props.user ?
                 <div>
-                <Grid columns={this.state.gridSize ? 3 : 2} padded='horizontally'>
+                    <Grid columns={this.state.gridSize ? 3 : 2} padded='horizontally'>
                 {this.state.toggle ? 
                 <Grid.Column>
                     <UploadProfileImage uploaded={(e)=> this.uploadedProfileImage(e)}/>
                 </Grid.Column> : null}
                 <Grid.Column>
-                 
-                    
-                            {filteredUser[0] && filteredUser[0].img ? <Image
-                                src={filteredUser[0].img}
-                                size='medium' circular centered>
-                            </Image> : null}
-                            
+                            {filteredUser[0] && filteredUser[0].img ?
+                                <Image
+                                    src={filteredUser[0].img}
+                                    size='medium' circular centered>
+                                </Image> : null}  
                 <Grid.Column/>
-
                 </Grid.Column>
                 <Grid.Column>
                 <h1 centered='true'>{localStorage.firstname} {" " + localStorage.lastname}</h1>
