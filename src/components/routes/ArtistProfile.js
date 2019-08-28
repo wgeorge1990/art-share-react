@@ -6,7 +6,7 @@ import Profile from '../Profile'
 
 const ArtistProfile = () => (
     <div>
-        <Profile />
+        <Profile/>
     </div>
 )
 export default ArtistProfile;

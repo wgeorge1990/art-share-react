@@ -20,7 +20,6 @@ import ArtDetail from './components/ArtDetail';
 import Favorites from './components/Favorites';
 import SignUp from './components/routes/SignUpRoute';
 
-
 class App extends Component {
   fetchArtistsPhotos = (e) => {
     const photosAPI = "https://art-share-rails.herokuapp.com/photos"
@@ -57,7 +56,7 @@ class App extends Component {
             <Route exact path="/SignUp" render={() => <CreateAccountForm setUser={this.setUser} />} />
             <Route exact path="/Login" render={() => <Login user={this.props.user} setUser={this.setUser} />} />
             <Route exact path="/ImageUploads" component={ImageUploads} />
-            <Route exact path="/ArtistProfile" component={Profile} />
+            {/* <Route exact path="/ArtistProfile" component={Profile} /> */}
             <Route exact path="/ArtDetail" render={() => <ArtDetail />} />
             <Route exact path="/Favorites" render={() => <Favorites />} />
             <Route exact path="/" render={() => <Home fetchArt={this.fetchArtistsPhotos} />} />

@@ -5,16 +5,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 class AppMenu extends React.Component {
   render() {
     return(
-      
-        <Menu widths={6}>
-         <Menu.Item>
-            <Link to="/">
-              My Art Board
-            </Link>
-          </Menu.Item>
-
+      <Menu widths={5}>
+        
           <Menu.Item>
-            <Link to="/ArtistProfile">
+            <Link to="/">
               Profile
             </Link>
           </Menu.Item>

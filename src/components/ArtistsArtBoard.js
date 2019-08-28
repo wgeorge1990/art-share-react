@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { userFetchArt } from '../actions/art';
 import ArtDetail from './ArtDetail';
 import { Redirect } from 'react-router-dom';
+import Profile from './Profile'
 
 
 class ArtistsArtBoard extends React.Component {
@@ -49,6 +50,7 @@ class ArtistsArtBoard extends React.Component {
     ]
        return(
          <Container className="CardContainer" style={{ 'width': "1600px" }}>
+           <Profile />
              <Card centered>
                <Button.Group>
                  <Button onClick={(e) => this.maximizeView(e)} >

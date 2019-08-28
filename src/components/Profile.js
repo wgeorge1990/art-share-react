@@ -11,7 +11,7 @@ class Profile extends React.Component {
         toggle: false,
         initialLoad: false
     }
-    
+
 
     uploadedProfileImage = () => {
         this.setState({
@@ -43,7 +43,7 @@ class Profile extends React.Component {
                             {filteredUser[0] && filteredUser[0].img ?
                                 <Image
                                     src={filteredUser[0].img}
-                                    size='medium' circular centered>
+                                    size='medium' centered>
                                 </Image> : null}  
                 <Grid.Column/>
                 </Grid.Column>
@@ -54,7 +54,7 @@ class Profile extends React.Component {
                 <Button onClick={(e)=> this.edit(e) }>Edit</Button>
                 </Grid.Column>
                 </Grid>
-                <ArtistsArtBoard/>
+                {/* <ArtistsArtBoard/> */}
             </div>
             : <Redirect to='/login'/> 
         )
