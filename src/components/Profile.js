@@ -54,7 +54,6 @@ class Profile extends React.Component {
                 <Button onClick={(e)=> this.edit(e) }>Edit</Button>
                 </Grid.Column>
                 </Grid>
-                {/* <ArtistsArtBoard/> */}
             </div>
             : <Redirect to='/login'/> 
         )
