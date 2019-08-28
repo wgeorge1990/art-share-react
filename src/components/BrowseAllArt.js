@@ -52,7 +52,12 @@ class BrowseAllArt extends React.Component {
                     clearable 
                     options={options} 
                     selection 
-                    onChange={this.searchTerm}
+                        onChange={this.searchTerm}
+                        
+
+
+
+                        
                     placeholder="Filter Art By Category"/>
                     <Button.Group>
                     <Button onClick={(e) => this.maximizeView(e)} >
