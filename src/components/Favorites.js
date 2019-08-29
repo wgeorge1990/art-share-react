@@ -43,9 +43,9 @@ class Favorites extends React.Component {
         console.log(photoIds, filteredArt)
         return (
             this.props.user ?
-                <Container fluid>
+                <Container fluid style={{ 'width': "1600px" }}>
                     {this.props.displayDetails === true ? <ArtDetail /> :
-                        <Container fluid >
+                        <Container fluid style={{ 'width': "1600px" }}>
                             <Card.Group itemsPerRow={3}>
                                 {filteredArt.map(image =>
                                     <Card

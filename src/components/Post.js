@@ -2,15 +2,15 @@ import React from 'react'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
-{/* <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' /> */ }
-
 class Post extends React.Component {
     state = {
         username: null
     }
+
     componentDidMount = () => {
         this.fetchUsername()
     }
+    
     fetchUsername = (e) => {
         console.log('fetchusername', e)
         fetch("https://art-share-rails.herokuapp.com/retrieveUsername", {

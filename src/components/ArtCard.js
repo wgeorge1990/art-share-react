@@ -64,6 +64,7 @@ class ArtCard extends React.Component {
       return a.id - b.id
     })
     console.log(sortedById)
+    
     return (
       sortedById.map(image =>
         <Card

@@ -11,7 +11,9 @@ import Profile from './Profile'
 class ArtistsArtBoard extends React.Component {
   state = {
     rowCount: 3,
-    searchterm: ""
+    searchterm: "",
+    showArtistPicture: false,
+    buttonText: "Show"
   }
 
   maximizeView = (e) => {
@@ -38,6 +40,25 @@ class ArtistsArtBoard extends React.Component {
     this.props.art.filter(art => art.category === this.state.searchTerm)
   }
 
+  toggleArtistPicture = () => {
+    this.setState({
+      showArtistPicture: !this.state.showArtistPicture,
+      rowCount: 3
+    })
+
+    if (this.state.buttonText == 'Hide') { 
+      this.setState({
+        buttonText: 'Show',
+        rowCount: 3
+      })
+    } else {
+      this.setState({
+        buttonText: 'Hide',
+        rowCount: 1
+      })
+    } 
+  }
+
   render(){ 
    const yourArt = this.props.art.filter(art => art.user_id === parseInt(localStorage.getItem('user_id')))
    const filteredForBoard = yourArt.filter(art => art.category !== 'profile')
@@ -50,16 +71,18 @@ class ArtistsArtBoard extends React.Component {
     ]
        return(
          <Container className="CardContainer" style={{ 'width': "1600px" }}>
-           <Profile />
              <Card centered>
                <Button.Group>
                  <Button onClick={(e) => this.maximizeView(e)} >
                    Maximize
-              </Button>
+                  </Button>
                  <Button.Or />
                  <Button onClick={(e) => this.minimizeView(e)}>
                    Minimize
               </Button>
+               <Button onClick={this.toggleArtistPicture}>
+                 {this.state.buttonText} Profile
+               </Button>
                </Button.Group>
              <Dropdown
                clearable
@@ -70,13 +93,14 @@ class ArtistsArtBoard extends React.Component {
              </Card>
            {this.props.showDetail ? <ArtDetail fetchArt={this.props.fetchArt}/> :
              <Container className="CardContainer" style={{ 'width': "1600px" }}>
-                <Card.Group itemsPerRow={this.state.rowCount}>
-                 <ArtCard 
-                 images={
-                   this.state.searchterm === "" ?  
-                      filteredForBoard : 
-                      filteredForBoard.filter(art => art.category === this.state.searchterm)}
-                 fetchArt={this.props.fetchArt} />
+               <Card.Group itemsPerRow={this.state.rowCount}>
+                 {this.state.showArtistPicture ? <Profile /> :
+                   <ArtCard
+                     images={
+                       this.state.searchterm === "" ?
+                         filteredForBoard :
+                         filteredForBoard.filter(art => art.category === this.state.searchterm)}
+                     fetchArt={this.props.fetchArt} /> }
                 </Card.Group>
              </Container>}
          </Container>
