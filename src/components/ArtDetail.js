@@ -36,13 +36,16 @@ class ArtDetail extends React.Component {
 
     render() {
         return (
-            <Container  >
+            <Container  textAlign='center'>
                 <Button
+                    centered
                     onClick={() => this.props.leaveDetail()}
                 >Back to Art</Button>
-                <Card centered fluid >
+                <Card centered fluid>
                     <h1>{this.props.art.title}</h1>
                     <Image
+                        centered
+                        style={{ 'width': '70%', 'height': '70%' }}
                         onClick={() => this.props.leaveDetail()}
                         src={this.props.art.img} />
 

@@ -7,7 +7,7 @@ class ArtCommentForm extends React.Component {
     state = {
         comments: null,
         content: "",
-        toggleComments: false
+        toggleComments: true
     }
 
     componentDidMount = () => {
@@ -53,11 +53,11 @@ class ArtCommentForm extends React.Component {
 
     }
 
-    showComments = (e) => {
-        this.setState({
-            toggleComments: !this.state.toggleComments
-        })
-    }
+    // showComments = (e) => {
+    //     this.setState({
+    //         toggleComments: !this.state.toggleComments
+    //     })
+    // }
 
 
     render() {
@@ -76,9 +76,9 @@ class ArtCommentForm extends React.Component {
                         primary
                         onClick={(e) => this.createComment(e)} />
                 </Form>
-                <Button fluid onClick={(e) => this.showComments(e)}>
+                {/* <Button fluid onClick={(e) => this.showComments(e)}>
                     Show  Comments
-                </Button>
+                </Button> */}
 
                 {this.state.toggleComments ?
 
