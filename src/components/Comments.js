@@ -50,15 +50,7 @@ class ArtCommentForm extends React.Component {
         this.setState({
             content: e.target.value
         })
-
     }
-
-    // showComments = (e) => {
-    //     this.setState({
-    //         toggleComments: !this.state.toggleComments
-    //     })
-    // }
-
 
     render() {
         return (
@@ -76,16 +68,10 @@ class ArtCommentForm extends React.Component {
                         primary
                         onClick={(e) => this.createComment(e)} />
                 </Form>
-                {/* <Button fluid onClick={(e) => this.showComments(e)}>
-                    Show  Comments
-                </Button> */}
-
                 {this.state.toggleComments ?
 
                     this.state.comments !== null ? this.state.comments.map(comment => <Post comment={comment} key={comment.id} />) : null
-
                     : null}
-
             </Comment.Group>
         )
     }
@@ -94,6 +80,5 @@ class ArtCommentForm extends React.Component {
 const mapStateToProps = (state) => {
     return { state }
 }
-
 
 export default connect(mapStateToProps)(ArtCommentForm)

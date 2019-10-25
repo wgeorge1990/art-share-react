@@ -7,7 +7,6 @@ import ArtDetail from './ArtDetail';
 import { Redirect } from 'react-router-dom';
 import Profile from './Profile'
 
-
 class ArtistsArtBoard extends React.Component {
   state = {
     rowCount: 3,

@@ -20,7 +20,6 @@ class ImageUploads extends React.Component {
     surface_material: null
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();

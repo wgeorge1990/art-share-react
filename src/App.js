@@ -48,7 +48,6 @@ class App extends Component {
     return (
       <Router>
         <Container fluid>
-          {/* <HeaderImage /> */}
           {this.props.user ? <Menu user={this.props.user} logOut={this.logOut} /> : null}
           <Switch>
             <Route exact path="/ArtistsArtBoard" render={() => <ArtistsArtBoard fetchArt={this.fetchArtistsPhotos} />} />
@@ -56,7 +55,6 @@ class App extends Component {
             <Route exact path="/SignUp" render={() => <CreateAccountForm setUser={this.setUser} />} />
             <Route exact path="/Login" render={() => <Login user={this.props.user} setUser={this.setUser} />} />
             <Route exact path="/ImageUploads" component={ImageUploads} />
-            {/* <Route exact path="/ArtistProfile" component={Profile} /> */}
             <Route exact path="/ArtDetail" render={() => <ArtDetail />} />
             <Route exact path="/Favorites" render={() => <Favorites />} />
             <Route exact path="/" render={() => <Home fetchArt={this.fetchArtistsPhotos} />} />

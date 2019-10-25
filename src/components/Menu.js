@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Menu, Item, Container, Segment} from 'semantic-ui-react';
+import { Menu, Item, Container, Segment} from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class AppMenu extends React.Component {
@@ -36,12 +36,8 @@ class AppMenu extends React.Component {
                Logout
           </Menu.Item>
       </Menu>
-      
     )
   }
-
-  
-  
-      }
+}
 
 export default AppMenu;

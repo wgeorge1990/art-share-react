@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import ArtDetail from './ArtDetail';
 import { Redirect } from 'react-router-dom';
 
-
 class BrowseAllArt extends React.Component {
     state = {
         rowCount: 3,

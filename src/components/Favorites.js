@@ -68,8 +68,7 @@ class Favorites extends React.Component {
                             </Card.Group>
                         </Container>}
                 </Container>
-                : <Redirect to="/login" />
-
+            : <Redirect to="/login" />
         )
     }
 }

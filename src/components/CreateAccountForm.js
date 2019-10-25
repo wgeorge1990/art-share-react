@@ -3,8 +3,6 @@ import { Button, Checkbox, Form, Container, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
-
 class CreateAccountForm extends React.Component {
   state = {
     firstname: '',
@@ -115,4 +113,5 @@ class CreateAccountForm extends React.Component {
 const mapStateToProps = (state) => {
   return { user: state.user }
 }
+
 export default connect(mapStateToProps)(CreateAccountForm)

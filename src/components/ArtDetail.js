@@ -5,7 +5,6 @@ import { leaveDetail } from '../actions/user'
 import { Moment } from 'react-moment';
 import ArtCommentForm from './Comments';
 
-
 class ArtDetail extends React.Component {
     saveToFavorites = (e, image) => {
         e.preventDefault();
